@@ -6,6 +6,7 @@ const imageData = ()=>{
     {
       id:1,
       img:elephant
+      
     },
     {
       id:2,
@@ -25,6 +26,20 @@ const imageData = ()=>{
 
 function App() {
   // code here
+  const images = imageData();
+
+  return (
+    <div className="App">
+      <h1>Kalvium Image Gallery</h1>
+      <div className="image-container">
+        {images.map(image => (
+          <img key={image.id} src={image.img} alt="image"/>
+        ))}
+      </div>
+    </div>
+  );
+
+
 }
 
 export default App;
